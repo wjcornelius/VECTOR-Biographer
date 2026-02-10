@@ -134,6 +134,6 @@ Email me: wjcornelius@gmail.com
 
 ---
 
-*Built by a human and Claude, February 2026.*
+*Built by W.J. Cornelius and Claude, February 2026.*
 
 *"I'm not trying to live forever. I'm trying to create a seed that could grow into something new."*
