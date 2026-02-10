@@ -6,30 +6,24 @@ A voice-based AI that interviews you about your life and builds a searchable dat
 
 ---
 
-## Quick Start (Windows) - 4 Steps
+## Quick Start (Windows) - 3 Steps
 
-### Step 1: Get an API Key (free to create, pay-per-use)
+### Step 1: Get an API Key
 1. Go to https://console.anthropic.com/
-2. Create an account (or sign in)
+2. Create a free account (or sign in)
 3. Click "API Keys" and create a new key
 4. Copy the key (it starts with `sk-ant-...`)
 
 ### Step 2: Download and Install
 1. **[Download this project](https://github.com/wjcornelius/VECTOR-Biographer/archive/refs/heads/main.zip)** and unzip it somewhere
 2. Double-click **`INSTALL.bat`**
-3. Wait for it to finish (5-10 minutes - it's downloading AI models)
+3. When prompted, paste your API key and press Enter
+4. Wait for it to finish (5-10 minutes - it's downloading AI models)
 
-### Step 3: Add Your API Key
-1. In the folder, find `.env.template`
-2. Make a copy of it and rename the copy to `.env` (just `.env`, nothing else)
-3. Open `.env` in Notepad
-4. Replace `your_api_key_here` with your actual API key
-5. Save and close
-
-### Step 4: Run It!
+### Step 3: Run It!
 Double-click **"VECTOR Biographer"** on your desktop.
 
-(If the shortcut didn't get created, double-click `START_BIOGRAPHER.bat` in the folder instead)
+That's it!
 
 ---
 
@@ -64,7 +58,6 @@ The AI runs on Claude (by Anthropic), which charges per use:
 - Python 3.10 or newer ([Download here](https://www.python.org/downloads/) - **check "Add to PATH" during install!**)
 - A microphone (laptop mic works fine)
 - Internet connection
-- Anthropic API key
 
 ---
 
@@ -80,7 +73,7 @@ The first install downloads large AI models (~2GB). Give it time.
 Check Windows Settings > Sound > Input. Make sure your mic is selected.
 
 **"API key invalid" or similar**
-Open your `.env` file and make sure your key is correct. No quotes needed around the key.
+Open your `.env` file in Notepad and make sure your key is correct. No quotes needed around the key.
 
 ---
 
