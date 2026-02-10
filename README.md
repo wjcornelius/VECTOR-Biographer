@@ -1,129 +1,122 @@
 # VECTOR Biographer
 
-A voice-based AI that interviews you about your life and builds a searchable database of your memories, experiences, and wisdom.
+**An AI that talks with you about your life and remembers everything.**
 
-**Talk to it like you'd talk to a friend.** It asks questions, listens, and remembers everything.
-
----
-
-## Quick Start (Windows) - 3 Steps
-
-### Step 1: Get an API Key
-1. Go to https://console.anthropic.com/
-2. Create a free account (or sign in)
-3. Click "API Keys" and create a new key
-4. Copy the key (it starts with `sk-ant-...`)
-
-### Step 2: Download and Install
-1. **[Download this project](https://github.com/wjcornelius/VECTOR-Biographer/archive/refs/heads/main.zip)** and unzip it somewhere
-2. Double-click **`INSTALL.bat`**
-3. When prompted, paste your API key and press Enter
-4. Wait for it to finish (5-10 minutes - it's downloading AI models)
-
-### Step 3: Run It!
-Double-click **"VECTOR Biographer"** on your desktop.
-
-That's it!
+You talk. It listens. It asks good questions. Over time, it builds a complete picture of who you are - your stories, your people, your wisdom.
 
 ---
 
-## How to Use It
+## Getting Started
 
-1. Click **Start** to begin a session
-2. The biographer will introduce itself and ask a question
-3. **Speak your answer** into your microphone
+### Before You Start: Two Things You Need
+
+**1. Python** (the programming language - free)
+   - Go to https://www.python.org/downloads/
+   - Click the big yellow "Download Python" button
+   - Run the installer
+   - **IMPORTANT: Check the box that says "Add Python to PATH"** (at the bottom of the first screen)
+   - Click Install
+
+**2. An Anthropic Account** (for the AI - pay as you go, about $1-2 per half hour of conversation)
+   - Go to https://console.anthropic.com/
+   - Click "Sign Up" and create an account
+   - Add a payment method (Settings > Billing)
+   - Click "API Keys" in the left sidebar
+   - Click "Create Key"
+   - Copy the key it gives you (starts with `sk-ant-...`) - you'll need this in a minute
+
+---
+
+### Installation (One Time)
+
+1. **[Click here to download](https://github.com/wjcornelius/VECTOR-Biographer/archive/refs/heads/main.zip)**
+
+2. Find the downloaded zip file and **unzip it** (right-click > Extract All)
+
+3. Open the folder and **double-click `INSTALL.bat`**
+
+4. When it asks for your API key, **paste it** (right-click > Paste) and press Enter
+
+5. Wait. It downloads a lot of stuff. Could take 10 minutes. Let it run.
+
+6. When it says "INSTALLATION COMPLETE", you're done!
+
+---
+
+### Running It
+
+**Double-click "VECTOR Biographer" on your desktop.**
+
+(If you don't see that shortcut, open the folder and double-click `START_BIOGRAPHER.bat` instead)
+
+---
+
+## How It Works
+
+1. Click **Start**
+2. It asks you a question (you'll hear it through your speakers)
+3. **Talk into your microphone** - tell your story
 4. When you're done talking, click **"I'M DONE"**
-5. It processes your response, saves insights, and asks another question
-6. When you're ready to stop, click **End**
+5. It thinks about what you said, saves the important parts, and asks another question
+6. Keep going as long as you want
+7. Click **End** when you're finished
 
-**Tips:**
-- Speak naturally - tell stories, share details
-- Sessions can be 5 minutes or 2 hours - whatever you want
-- Use **Pause** if you need a break
-- Click the visualization buttons to see your data mapped out
+**That's it.** Just talk to it like you'd talk to a friend.
+
+---
+
+## Tips
+
+- **Speak naturally.** Tell stories. Go off on tangents. That's the good stuff.
+- **Sessions can be any length.** 5 minutes or 2 hours.
+- **Use Pause** if you need to step away.
+- **It remembers everything** from previous sessions.
+
+---
+
+## If Something Goes Wrong
+
+**"Python is not installed"**
+You need to install Python first. See "Before You Start" above. Make sure you check "Add to PATH" during installation.
+
+**Installation seems frozen**
+It's probably still downloading. The AI models are big (~2GB). Give it 10-15 minutes.
+
+**Can't hear anything / Microphone not working**
+- Make sure your speakers aren't muted
+- Check that your microphone is plugged in
+- Windows Settings > Sound > make sure the right mic is selected
+
+**"API key invalid"**
+Your key might have a typo. Open the `.env` file in Notepad and check it. The key should start with `sk-ant-`.
+
+**Something else broke**
+Try running `INSTALL.bat` again. It won't hurt anything.
 
 ---
 
 ## What Does It Cost?
 
-The AI runs on Claude (by Anthropic), which charges per use:
-- **~$1-2 per 30-minute conversation**
-- Check your balance at console.anthropic.com
+The AI (Claude, made by Anthropic) charges based on usage:
+- **About $1-2 per 30 minutes of conversation**
+- You can check your balance at console.anthropic.com
+- Add money to your account as needed
 
 ---
 
-## Requirements
+## Questions?
 
-- Windows 10 or 11
-- Python 3.10 or newer ([Download here](https://www.python.org/downloads/) - **check "Add to PATH" during install!**)
-- A microphone (laptop mic works fine)
-- Internet connection
+**What is this, really?**
+It's a voice-based AI interviewer that helps you tell your life story. It asks questions, listens to your answers, and builds a searchable database of everything you share.
 
----
+**Why would I want this?**
+To capture who you are - not just facts, but how you think, what you've learned, who shaped you. For yourself, for your family, for whoever comes after.
 
-## Troubleshooting
+**Is my data private?**
+Your conversations stay on your computer. The audio goes to OpenAI for transcription, and the text goes to Anthropic for the AI to respond. Neither company stores it permanently. Your database stays local on your machine.
 
-**"Python is not installed"**
-Download Python from https://python.org. During installation, CHECK THE BOX that says "Add Python to PATH".
-
-**Install seems stuck**
-The first install downloads large AI models (~2GB). Give it time.
-
-**No sound / microphone not working**
-Check Windows Settings > Sound > Input. Make sure your mic is selected.
-
-**"API key invalid" or similar**
-Open your `.env` file in Notepad and make sure your key is correct. No quotes needed around the key.
-
----
-
-## What This Is
-
-This started as a personal project to document a life - not just facts, but how someone thinks, what they value, who shaped them, what they've learned.
-
-It's a **snapshot release**: it works, but we're not maintaining it. Use it, modify it, learn from it. If something breaks, you're welcome to fix it.
-
----
-
-## For Developers
-
-<details>
-<summary>Click to expand technical details</summary>
-
-### Architecture
-- **Voice Input**: OpenAI Whisper (medium model)
-- **Voice Output**: Microsoft Edge TTS (neural voices)
-- **Conversation**: Claude Sonnet
-- **Extraction**: Hybrid Opus (factual) + Sonnet (emotional/analytical)
-- **Database**: SQLite (30+ tables) + ChromaDB (vector search)
-- **GUI**: CustomTkinter (dark theme, TV-optimized)
-
-### Project Structure
-```
-biographer/
-├── main_gui.py           # Main application
-├── biographer.py         # Conversation engine
-├── multi_pass_extraction.py  # 3-pass extraction
-├── enricher.py           # Database operations
-├── embeddings.py         # Vector store
-├── voice_input.py        # Speech-to-text
-├── voice_output.py       # Text-to-speech
-├── gui/                  # GUI components
-└── prompts/              # AI prompts
-```
-
-### Customization
-- Edit `prompts/system.txt` to change the biographer's personality
-- Edit `setup_database.py` to add new data categories
-- Edit `voice_output.py` to change the voice
-
-</details>
-
----
-
-## License
-
-MIT - do whatever you want with it.
+**Can I see what it's captured?**
+Yes! Click the visualization buttons in the app to see your memories mapped out.
 
 ---
 
