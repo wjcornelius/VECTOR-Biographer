@@ -6,6 +6,16 @@ You talk. It listens. It asks good questions. Over time, it builds a complete pi
 
 ---
 
+## System Requirements
+
+- **Windows 10 or 11**
+- **8GB RAM minimum** (16GB recommended)
+- **5GB free disk space** (for AI models)
+- **A microphone** (built-in laptop mic works fine)
+- **Internet connection** (for the AI conversation, not for voice recognition)
+
+---
+
 ## Getting Started
 
 ### Before You Start: Two Things You Need
@@ -113,7 +123,7 @@ It's a voice-based AI interviewer that helps you tell your life story. It asks q
 To capture who you are - not just facts, but how you think, what you've learned, who shaped you. For yourself, for your family, for whoever comes after.
 
 **Is my data private?**
-Your conversations stay on your computer. The audio goes to OpenAI for transcription, and the text goes to Anthropic for the AI to respond. Neither company stores it permanently. Your database stays local on your machine.
+Your voice is transcribed locally on your computer - the audio never leaves your machine. Only the text of what you said goes to Anthropic for the AI to respond. Your database stays entirely on your computer.
 
 **Can I see what it's captured?**
 Yes! Click the visualization buttons in the app to see your memories mapped out.
