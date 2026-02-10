@@ -129,6 +129,9 @@ Your voice is transcribed locally on your computer - the audio never leaves your
 **Can I see what it's captured?**
 Yes! Click the visualization buttons in the app to see your memories mapped out.
 
+**Something not working? Have feedback?**
+Email me: wjcornelius@gmail.com
+
 ---
 
 *Built by a human and Claude, February 2026.*
