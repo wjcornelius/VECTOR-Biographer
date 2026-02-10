@@ -13,6 +13,7 @@ You talk. It listens. It asks good questions. Over time, it builds a complete pi
 - **5GB free disk space** (for AI models)
 - **A microphone** (built-in laptop mic works fine)
 - **Internet connection** (for the AI conversation, not for voice recognition)
+- **GPU: Not required.** Voice recognition runs on your CPU. It's slower without a GPU (30-60 seconds vs 5-10 seconds per response), but it works fine.
 
 ---
 
