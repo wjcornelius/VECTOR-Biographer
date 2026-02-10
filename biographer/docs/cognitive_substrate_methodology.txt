@@ -1,0 +1,320 @@
+================================================================================
+COGNITIVE SUBSTRATE PROJECT - METHODOLOGY DOCUMENT
+For External Review by Claude Opus 4.6
+February 8, 2026
+================================================================================
+
+PROJECT OVERVIEW
+================================================================================
+
+Bill Cornelius (age 59) is building a comprehensive "cognitive substrate" - a
+database capturing his entire life story, thought patterns, emotional landscape,
+and cognitive architecture. The ultimate vision is that this database could
+someday serve as foundational data for an embodied AI that carries forward
+Bill's patterns, wisdom, and personality.
+
+The system consists of:
+1. A voice biographer GUI that conducts conversations with Bill
+2. An extraction system that processes transcripts into structured data
+3. A SQLite database with 27+ tables covering all aspects of human experience
+4. A ChromaDB vector database for semantic search and retrieval
+5. Visualization tools for exploring the data
+
+
+CORE PRINCIPLES
+================================================================================
+
+1. NEVER TRUNCATE BILL'S WORDS
+   - Every word is precious. No compromises that sacrifice data.
+   - Raw transcripts are always preserved as ground truth.
+
+2. RAW TRANSCRIPTS ARE GROUND TRUTH
+   - We can always re-interpret with better extraction methodologies later.
+   - The original words are more valuable than any extraction.
+
+3. EXTRACT EXHAUSTIVELY
+   - There is NO penalty for extracting too much.
+   - There IS a penalty for missing things.
+   - Target: 100-150 entries per substantial session.
+
+
+TECHNICAL ARCHITECTURE
+================================================================================
+
+Components:
+-----------
+- GUI: CustomTkinter (dark theme, TV-optimized for couch viewing)
+- Speech-to-Text: OpenAI Whisper (medium model)
+- Text-to-Speech: Windows SAPI via pyttsx3
+- Conversation LLM: Claude Sonnet 4 (fast, good for dialogue)
+- Extraction LLM: Claude Opus 4 (thorough, comprehensive)
+- Embedding Model: nomic-ai/nomic-embed-text-v1.5 (768 dimensions)
+- Vector Database: ChromaDB with persistent storage
+- Primary Database: SQLite
+
+File Structure:
+---------------
+_soul/
+├── bill_knowledge_base.db      # SQLite database (27+ tables)
+├── vector_db/                  # ChromaDB persistent storage
+└── biographer/
+    ├── main_gui.py             # GUI application
+    ├── biographer.py           # Conversation and extraction logic
+    ├── multi_pass_extraction.py # New 3-pass extraction system
+    ├── enricher.py             # Database writing logic
+    ├── embeddings.py           # Vector store management
+    └── prompts/                # System prompts for Claude
+
+
+DATABASE SCHEMA (27+ Tables)
+================================================================================
+
+FACTUAL TABLES (Recording what happened):
+-----------------------------------------
+- life_events: Specific events with dates, locations, people involved
+- relationships: People in Bill's life, their roles, dynamics
+- stories: Complete narratives with full arc preserved
+- self_knowledge: Things Bill explicitly says about himself
+- philosophies: Stated beliefs and worldview
+- preferences: Tastes, habits, inclinations
+
+EMOTIONAL LANDSCAPE TABLES:
+---------------------------
+- joys: Sources of genuine fulfillment, peak experiences
+- sorrows: Grief, heartbreak, deep sadness
+- loves: People or things deeply loved
+- fears: What threatens Bill, anxiety sources
+- longings: Unmet needs, yearnings
+
+GROWTH & WOUNDS TABLES:
+-----------------------
+- wounds: Traumas, psychological injuries
+- healings: Recoveries, restorations
+- losses: Deaths, endings, deprivations
+- growth: Post-traumatic growth, expansion through suffering
+
+CHARACTER TABLES:
+-----------------
+- strengths: Virtues, capacities
+- vulnerabilities: Tender spots, ongoing struggles
+- regrets: What he would do differently
+- wisdom: Hard-won insights from experience
+- questions: What Bill is still figuring out
+
+COGNITIVE ARCHITECTURE TABLES (Inferential):
+--------------------------------------------
+- decisions: Major life choices and reasoning
+- mistakes: Errors and lessons learned
+- reasoning_patterns: How Bill thinks through problems
+- value_hierarchies: What Bill prioritizes
+- cognitive_biases: Blind spots in thinking
+- contradictions: Tensions between beliefs or actions
+- meaning_structures: What makes life worth living
+- mortality_awareness: How death awareness shapes choices
+- body_knowledge: What embodied experience has taught
+
+
+EXTRACTION METHODOLOGY
+================================================================================
+
+ORIGINAL APPROACH (Single-Pass) - DEPRECATED
+--------------------------------------------
+- One API call attempting to extract all categories
+- Issues:
+  * JSON output truncation causing parse failures
+  * Missing categories (code only captured 2 of 5 extraction types)
+  * Yielded only 30-60 entries per session
+
+NEW APPROACH (Multi-Pass Extraction) - CURRENT
+----------------------------------------------
+Uses 3 focused API calls, each targeting specific categories:
+
+PASS 1: FACTUAL (50-100 entries expected)
+- Relationships: Every person mentioned = 1 entry
+- Life Events: Every distinct thing that happened = 1 entry
+- Stories: Complete narratives
+- Preferences: Stated likes/dislikes
+- Self-Knowledge: Explicit self-statements
+
+PASS 2: EMOTIONAL (20-40 entries expected)
+- Joys: What brought happiness
+- Sorrows: Sources of sadness
+- Wounds: Traumas and injuries
+- Fears: Anxiety sources
+- Loves: Things deeply cherished
+- Losses: What was taken away
+- Regrets: What he'd do differently
+
+PASS 3: ANALYTICAL (20-40 entries expected)
+- Decisions: Major choices and reasoning
+- Wisdom: Hard-won insights
+- Reasoning Patterns: How Bill thinks
+- Growth: Positive changes from suffering
+- Strengths: Virtues and capabilities
+- Vulnerabilities: Tender spots
+- Value Hierarchies: What's prioritized
+- Contradictions: Tensions in beliefs/actions
+
+Each pass uses:
+- Model: Claude Opus 4 (claude-opus-4-20250514)
+- Max tokens: 16,000
+- Streaming API (required for long operations)
+- Simple JSON array output (avoids complex nested structures)
+- Multiple fallback regex parsers for robustness
+
+
+BIOGRAPHER CONVERSATION DESIGN
+================================================================================
+
+System Prompt Guidance:
+-----------------------
+- Be a curious, attentive friend - not a therapist or interrogator
+- Ask open questions, follow the thread of conversation
+- Listen for emotional texture, not just facts
+- Before asking questions, mention what area is being explored
+- Acknowledge what Bill shares before moving to next question
+
+Gap Awareness:
+--------------
+- On startup, the biographer analyzes category coverage
+- Identifies underrepresented areas (e.g., few "joys" entries)
+- Mentions gaps naturally: "I'd like to explore times you felt real joy..."
+
+Session Balance (Bipolar Consideration):
+----------------------------------------
+- Bill has bipolar 1 disorder
+- System tracks emotional valence of conversation
+- If session gets too heavy, gently steers to lighter topics
+- Aims to end sessions in balanced, grounded place
+
+
+CURRENT DATABASE STATISTICS
+================================================================================
+
+As of February 8, 2026 (after multi-pass re-extraction):
+
+Vector Database: 1,867 entries total
+
+By Table:
+- life_events: 482 entries
+- self_knowledge: 449 entries
+- relationships: 196 entries
+- stories: 90 entries
+- joys: 84 entries
+- reasoning_patterns: 70 entries
+- value_hierarchies: 60 entries
+- wisdom: 46 entries
+- fears: 34 entries
+- loves: 34 entries
+- decisions: 36 entries
+- contradictions: 35 entries
+- strengths: 32 entries
+- wounds: 31 entries
+- growth: 30 entries
+- meaning_structures: 28 entries
+- vulnerabilities: 25 entries
+- cognitive_biases: 24 entries
+- regrets: 19 entries
+- sorrows: 18 entries
+- body_knowledge: 16 entries
+- losses: 12 entries
+- mortality_awareness: 10 entries
+- mistakes: 6 entries
+
+Sessions processed: 6 (over 2 days)
+Total transcript characters: ~134,000
+Extraction yield: ~95 entries per session average
+
+
+VISUALIZATIONS
+================================================================================
+
+1. CONSTELLATION MAP (Attached Screenshot)
+   - t-SNE projection of all vector embeddings into 2D space
+   - Each point represents one database entry
+   - Color-coded by table/category
+   - Clusters indicate semantically related memories
+   - Reveals thematic groupings in Bill's life story
+
+2. CLUSTER MAP (Attached Screenshot)
+   - Sunburst chart showing semantic clusters
+   - Hierarchical view of how memories group together
+   - Generated via K-means clustering of embeddings
+   - Shows which themes dominate the substrate
+
+3. COVERAGE MAP (Not attached)
+   - Bar chart showing entry counts by category
+   - Identifies gaps in coverage
+
+4. GAP RADAR (Not attached)
+   - Radar chart comparing current vs target coverage
+   - Highlights underrepresented categories
+
+
+KNOWN ISSUES & LESSONS LEARNED
+================================================================================
+
+1. RELATIONSHIPS ROUTING BUG (Fixed)
+   - Category handlers in enricher.py were routing relationships to
+     self_knowledge table instead of relationships table
+
+2. EXTRACTION PROMPT BIAS (Fixed)
+   - Original prompts emphasized 13 inferential categories vs 6 factual
+   - Caused over-abstraction, missing concrete events and people
+   - New multi-pass system balances factual vs inferential
+
+3. SESSION SUMMARIES CAN HALLUCINATE
+   - Biographer once confused Bill's sixth grade (1976) with girlfriend
+     Audrey's death (1984) in a session summary
+   - Critical dates must be verified against source transcripts
+
+4. JSON TRUNCATION (Fixed)
+   - Single-pass extraction with complex JSON structures caused truncation
+   - Multi-pass with simple arrays avoids this
+
+5. DUPLICATE SPEECH SEGMENTS
+   - Session logs sometimes contain duplicate BILL_SPEAKS events
+   - Extraction scripts now deduplicate before processing
+
+
+CRITICAL BIOGRAPHICAL FACTS (Verified)
+================================================================================
+
+These facts have been verified with Bill and should be considered authoritative:
+
+- Audrey's death: March 5, 1984
+  * She was a JUNIOR IN HIGH SCHOOL (age ~17)
+  * Bill had just turned 19
+  * Bill was a JUNIOR at Pasadena City College
+  * Motor scooter accident at Arcadia Methodist Hospital
+
+- Bill's birth year: ~1965 (59 years old in 2024)
+
+
+QUESTIONS FOR REVIEW
+================================================================================
+
+1. Is the 27-table schema comprehensive enough to capture a human life?
+   Are there important categories we're missing?
+
+2. Is the 3-pass extraction methodology sound? Should there be more passes
+   or different category groupings?
+
+3. Looking at the constellation/cluster visualizations, what patterns or
+   gaps do you observe?
+
+4. Are there risks in this approach we should be aware of?
+
+5. How might we better validate extraction accuracy against source transcripts?
+
+6. What would you recommend for improving the cognitive architecture tables
+   (the inferential/analytical ones)?
+
+7. Are there better embedding models or clustering approaches we should consider?
+
+8. How might we structure the data to be more useful for a future embodied AI?
+
+
+================================================================================
+END OF DOCUMENT
+================================================================================

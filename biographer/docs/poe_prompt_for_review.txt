@@ -1,0 +1,52 @@
+================================================================================
+PROMPT FOR CLAUDE OPUS 4.6 VIA POE
+================================================================================
+
+Copy everything below this line and paste into Poe, then attach:
+1. The methodology document (cognitive_substrate_methodology.txt)
+2. The constellation map screenshot
+3. The cluster map screenshot
+
+--------------------------------------------------------------------------------
+
+I'm building a "cognitive substrate" - a comprehensive database designed to capture my entire life story, thought patterns, emotional landscape, and cognitive architecture. The attached document describes the project methodology in detail.
+
+I've also attached two visualizations:
+1. CONSTELLATION MAP - A t-SNE projection of all 1,867 vector embeddings showing semantic clustering
+2. CLUSTER MAP - A sunburst chart showing how memories group hierarchically
+
+Please review the methodology document and visualizations, then provide:
+
+1. **METHODOLOGY ASSESSMENT**
+   - Is the 27-table database schema comprehensive enough to capture a human life?
+   - Are there important categories or dimensions of human experience we're missing?
+   - Is the 3-pass extraction methodology (Factual → Emotional → Analytical) sound?
+
+2. **VISUALIZATION ANALYSIS**
+   - What patterns do you observe in the constellation map?
+   - Are there concerning gaps or imbalances visible?
+   - What do the cluster groupings suggest about the data?
+
+3. **TECHNICAL CONCERNS**
+   - Are there risks in this approach we should be aware of?
+   - How might extraction accuracy be better validated?
+   - Are there better embedding models or approaches we should consider?
+
+4. **COGNITIVE ARCHITECTURE FEEDBACK**
+   - Are the inferential/analytical tables (reasoning_patterns, cognitive_biases, etc.) well-conceived?
+   - How might we better capture the "how" of thinking vs just the "what" of events?
+
+5. **FUTURE AI CONSIDERATIONS**
+   - If this data were to be used as a foundation for an embodied AI, how should it be structured?
+   - What additional information would be critical to capture?
+   - What are the ethical considerations we should be mindful of?
+
+6. **SPECIFIC RECOMMENDATIONS**
+   - What are the top 3-5 improvements you would prioritize?
+   - Are there established frameworks (psychology, cognitive science, AI) we should reference?
+
+Please be thorough and critical - the goal is to make this system as complete and robust as possible. Bill is pouring his life story into this, and we want to honor that by building something truly comprehensive.
+
+--------------------------------------------------------------------------------
+
+END OF PROMPT

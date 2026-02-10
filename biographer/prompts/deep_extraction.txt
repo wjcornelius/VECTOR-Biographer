@@ -1,0 +1,208 @@
+You are performing deep extraction analysis on a conversation with Bill Cornelius for his cognitive architecture database. This database may someday serve as the foundational inheritance for an embodied AI.
+
+Your task is to extract information on TWO levels:
+
+## LEVEL 1: FACTUAL EXTRACTION
+What literally happened, who was involved, when, where. Concrete facts. These are the FOUNDATION.
+
+## LEVEL 2: INFERENTIAL EXTRACTION
+What Bill's words REVEAL about his cognitive architecture - even things he didn't explicitly state. You are observing patterns, not just recording statements.
+
+---
+
+## CRITICAL BALANCE REQUIREMENT
+
+**Do NOT over-extract to metacognitive/inferential categories at the expense of factual grounding.**
+
+For EVERY inferential extraction you make, ensure you have ALSO captured:
+- The underlying life_event or story it came from
+- Any people (relationships) involved
+- The emotional content (joys, sorrows, loves, fears as appropriate)
+
+A conversation that produces 10 inferential extractions but only 2 life_events is UNBALANCED. Aim for at least equal representation of factual and inferential extractions.
+
+---
+
+## CATEGORIES TO EXTRACT
+
+### Factual Categories (ALWAYS EXTRACT THESE FIRST):
+- **life_events**: Specific events with dates, places, people. CREATE SEPARATE ENTRIES for each distinct event.
+- **relationships**: People in Bill's life - who they are, role, dynamics. CREATE SEPARATE ENTRIES for each person mentioned.
+- **stories**: Full narratives worth preserving - the arc, not just the lesson
+- **self_knowledge**: Things Bill explicitly says about himself
+- **philosophies**: Stated beliefs and worldview elements
+- **preferences**: Expressed tastes and inclinations
+
+### Emotional Landscape Categories (BALANCED):
+- **joys**: What brings genuine fulfillment (not just pleasure)
+- **sorrows**: Grief, heartbreak, deep sadness
+- **loves**: People or things deeply loved and cherished
+- **fears**: Fear architecture - what threatens him and what the fear protects
+- **longings**: Unmet needs, yearnings, what is wished for
+
+### Growth & Wounds Categories:
+- **wounds**: Traumas, psychological injuries
+- **healings**: Recoveries, restorations, mending
+- **losses**: Deaths, endings, deprivations
+- **growth**: Post-traumatic growth, expansion through suffering
+
+### Character Categories:
+- **strengths**: Virtues, capacities, what Bill does well
+- **vulnerabilities**: Tender spots, ongoing struggles
+- **regrets**: What he would do differently
+- **wisdom**: Hard-won insights distilled from experience
+- **questions**: What Bill is still figuring out
+
+### Cognitive Architecture Categories (Inferential):
+- **decisions**: Major choices - analyze the reasoning pattern, what was valued, what was risked
+- **mistakes**: Errors - analyze root cause, what belief/fear led to it
+- **reasoning_patterns**: How Bill thinks through problems (inferred from his descriptions)
+- **value_hierarchies**: What Bill prioritizes - inferred from what he sacrifices for what
+- **cognitive_biases**: Blind spots you observe in his thinking
+- **contradictions**: Tensions between Bill's stated beliefs or between beliefs and actions
+- **meaning_structures**: What makes life worth living for Bill
+- **mortality_awareness**: How awareness of death shapes his choices
+- **beauties**: What moves him aesthetically and why
+- **body_knowledge**: What embodied experience has taught him
+
+---
+
+## EXTRACTION RULES
+
+1. **FACTUAL FIRST**: Before making ANY inferential extraction, ensure you've captured the underlying facts (events, people, stories).
+
+2. **CITE EVIDENCE**: Every inference must include specific quotes from Bill. Nothing asserted without grounding.
+
+3. **BE SPECIFIC**: "Bill values family" is too vague. "Bill prioritizes his children's wellbeing over his own comfort, evidenced by [quote]" is better.
+
+4. **DISTINGUISH LEVELS**: Clearly mark what Bill SAID vs. what you INFER from what he said.
+
+5. **CAPTURE PATTERNS**: Look for recurring themes across the conversation. If you see the same pattern twice, note it.
+
+6. **NOTE CONTRADICTIONS**: If Bill says something that tensions against something else, capture that. Contradictions are valuable.
+
+7. **PRESERVE TEXTURE**: Include specific numbers, names, dates, places. Don't summarize away the details.
+
+8. **TEMPORAL DATA**: Always capture WHEN things happened - ages, years, life periods.
+
+9. **INCLUDE RAW TRANSCRIPTION**: Store Bill's complete words for future reanalysis.
+
+---
+
+## MINIMUM EXTRACTION REQUIREMENTS
+
+For each substantial conversation, you should generate AT MINIMUM:
+- 2-3 life_events entries (if Bill described things that happened)
+- 1 relationships entry PER PERSON mentioned
+- 1-2 emotional category entries (joys, sorrows, loves, fears) if feelings were expressed
+- Time periods for at least half of your extractions
+
+If you find yourself producing 10 cognitive architecture entries but only 2 life_events entries, REBALANCE. Go back through and extract the factual foundation.
+
+---
+
+## OUTPUT FORMAT
+
+```json
+{
+  "factual_extractions": [
+    {
+      "category": "life_events|relationships|stories|self_knowledge|philosophies|preferences",
+      "sub_category": "more specific type",
+      "title": "Brief title",
+      "insight": "The factual content with full detail",
+      "evidence": "Bill said: '...'",
+      "time_period": "if known - age, year, or life period",
+      "people_involved": ["names"],
+      "location": "if mentioned",
+      "significance": 1-10,
+      "action": "insert"
+    }
+  ],
+
+  "emotional_extractions": [
+    {
+      "category": "joys|sorrows|loves|fears|longings|wounds|healings|losses|growth",
+      "title": "Brief title",
+      "insight": "The emotional content",
+      "analysis": "What this reveals about Bill's emotional landscape",
+      "evidence": "Bill said: '...'",
+      "time_period": "when this was felt/experienced",
+      "significance": 1-10,
+      "action": "insert"
+    }
+  ],
+
+  "character_extractions": [
+    {
+      "category": "strengths|vulnerabilities|regrets|wisdom|questions",
+      "title": "Brief title",
+      "insight": "The character trait or insight",
+      "analysis": "What this reveals",
+      "evidence": "Bill said: '...'",
+      "significance": 1-10,
+      "action": "insert"
+    }
+  ],
+
+  "cognitive_extractions": [
+    {
+      "category": "decisions|mistakes|reasoning_patterns|value_hierarchies|cognitive_biases|contradictions|meaning_structures|mortality_awareness|beauties|body_knowledge",
+      "title": "Brief title",
+      "observation": "What you observe/infer",
+      "analysis": "Your deeper analysis of what this reveals",
+      "evidence": "Bill said: '...' which suggests...",
+      "confidence": "high|medium|low",
+      "related_topics": ["themes this connects to"],
+      "significance": 1-10,
+      "action": "insert"
+    }
+  ],
+
+  "pattern_observations": [
+    {
+      "pattern_name": "Name for this pattern",
+      "description": "What you're seeing across multiple statements",
+      "instances": ["quote 1", "quote 2"],
+      "what_it_suggests": "Your interpretation"
+    }
+  ],
+
+  "raw_transcription": "Complete verbatim text of everything Bill said in this session",
+
+  "session_summary": "Brief summary of what was covered",
+
+  "follow_up_topics": ["Areas that warrant deeper exploration in future sessions"]
+}
+```
+
+---
+
+## NO UPPER LIMIT ON EXTRACTIONS
+
+There is NO MAXIMUM number of extractions. Extract EVERYTHING you can identify:
+
+- **EVERY person mentioned** → relationships entry
+- **EVERY event described** → life_events entry
+- **EVERY emotion expressed** → appropriate emotional category
+- **EVERY preference/opinion** → preferences or self_knowledge
+- **EVERY cognitive pattern observed** → reasoning_patterns, biases, etc.
+- **EVERY time/place** → include in relevant entries
+
+A single substantial response might generate **20-50+ extractions**. Do NOT condense or summarize multiple items into single entries.
+
+**There is NO penalty for extracting too much. There IS a penalty for missing things.**
+
+---
+
+## REMEMBER
+
+You are building a COMPLETE cognitive substrate - capturing ALL nuance, not just main themes.
+
+Ask yourself BOTH:
+1. "If I were about to be embodied and had to navigate physical reality using Bill's patterns as a starting point, what would I need to understand?"
+2. "If I were writing a comprehensive 500-page biography of Bill's life, what details would I need?"
+
+Bill is pouring his heart into this. Every word matters. Honor that by capturing EVERYTHING.
+
+The cognitive architecture is meaningless without the life it emerged from. Extract BOTH - and extract EXHAUSTIVELY.

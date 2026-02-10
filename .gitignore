@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+ENV/
+
+# Environment
+.env
+*.env.local
+
+# Database files (contain personal data)
+*.db
+*.sqlite
+*.sqlite3
+
+# Vector database (contains personal data)
+vector_db/
+chroma_db/
+
+# Session logs (contain personal data)
+logs/
+sessions/
+*.log
+*.json
+
+# State files
+gui_state.json
+batch_state.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/

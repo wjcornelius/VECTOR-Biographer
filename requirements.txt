@@ -1,0 +1,35 @@
+# VECTOR Biographer Dependencies
+
+# Core AI
+anthropic>=0.20.0
+openai-whisper>=20231117
+
+# Embeddings & Vector Store
+sentence-transformers>=2.2.0
+chromadb>=0.4.0
+einops>=0.7.0  # Required for nomic-embed-text
+
+# Audio
+sounddevice>=0.4.6
+numpy>=1.24.0
+pydub>=0.25.1
+pygame>=2.5.0
+
+# TTS
+edge-tts>=6.1.0
+
+# ML Backend
+torch>=2.0.0
+torchaudio>=2.0.0
+scikit-learn>=1.3.0
+
+# GUI
+customtkinter>=5.2.0
+
+# Visualization
+plotly>=5.18.0
+kaleido>=0.2.1
+
+# Utilities
+python-dotenv>=1.0.0
+scipy>=1.11.0

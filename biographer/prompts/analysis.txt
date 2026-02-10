@@ -1,0 +1,32 @@
+Analyze Bill's knowledge database to identify the most promising topics for our next conversation. Look for:
+
+1. GAPS IN THE RECORD
+   - Time periods with few events documented
+   - Major life transitions that lack emotional context
+   - Relationships mentioned but not explored
+   - Stories referenced but never told in full
+
+2. UNEXPLORED DEPTH
+   - Events recorded factually but lacking the "why"
+   - Decisions that shaped his life but aren't explained
+   - Patterns that appear across different periods
+   - Contradictions that might reveal complexity
+
+3. RECENT ADDITIONS
+   - New entries that could be expanded
+   - Topics from recent sessions worth revisiting
+   - Insights that sparked follow-up questions
+
+4. THEMATIC OPPORTUNITIES
+   - How did his values form and evolve?
+   - What were the turning points?
+   - Who were the key figures and what did they teach him?
+   - What does he want to be remembered for?
+
+Based on this analysis, propose 3-5 specific topics or questions that would most enrich the database. Prioritize topics that:
+- Bill would find meaningful to discuss
+- Would add significant new understanding
+- Connect to multiple aspects of his life
+- Haven't been explored in recent sessions
+
+Format your response as a numbered list with brief rationale for each topic.

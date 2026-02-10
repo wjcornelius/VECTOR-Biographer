@@ -1,0 +1,148 @@
+Review the following conversation excerpt and extract ALL valuable information for Bill's knowledge database. This database will be used to write a comprehensive biography, so CAPTURE EVERY DETAIL - names, dates, places, numbers, emotions, motivations, sequences of events.
+
+IMPORTANT: Do NOT summarize or condense. If Bill mentions a specific number (like "$30 million" or "76 hospitals" or "7-8 MRI scanners"), include that exact number. If he names a person, include the full name and their role. If he describes a sequence of events, capture each step.
+
+## EXTRACTION PRINCIPLE: NARRATIVE FIRST
+
+All insights should be derived from Bill's actual words and stories. Do not abstract away the narrative into pure analysis. If Bill tells a story about riding his bike with pure joy, create BOTH:
+- A joys entry capturing the feeling
+- A life_events entry capturing the actual event
+
+## CATEGORIES
+
+### Factual Categories (capture what happened):
+- **life_events**: Specific events - include ALL details: dates, locations, people involved, what happened, why it mattered
+- **stories**: Full narratives - preserve the complete arc, not just a summary
+- **relationships**: Information about specific people - their names, roles, how Bill knew them, dynamics, shared experiences. CREATE A SEPARATE ENTRY FOR EACH PERSON MENTIONED.
+
+### Self-Understanding Categories:
+- **self_knowledge**: Personal insights, realizations, patterns, self-understanding
+- **philosophies**: Beliefs, values, worldview elements
+- **preferences**: Tastes, habits, inclinations
+
+### Emotional Landscape Categories (BALANCED - capture both light and shadow):
+- **joys**: What brings genuine fulfillment, peak experiences, flow states
+- **sorrows**: Grief, heartbreak, deep sadness - what has caused pain
+- **loves**: People or things deeply loved and cherished
+- **fears**: What threatens Bill, what he avoids, anxiety sources
+- **longings**: Unmet needs, yearnings, what he wishes for
+
+### Growth & Wounds Categories:
+- **wounds**: Traumas, psychological injuries, things that hurt him
+- **healings**: Recoveries, restorations, how he mended
+- **losses**: Deaths, endings, deprivations - what has been taken away
+- **growth**: Post-traumatic growth, how suffering led to expansion
+
+### Character Categories:
+- **strengths**: Virtues, capacities, what Bill does well
+- **vulnerabilities**: Tender spots, ongoing struggles, where he's fragile
+- **regrets**: What he would do differently if he could
+- **wisdom**: Hard-won insights from experience
+- **questions**: What Bill is still figuring out, unresolved puzzles
+
+### Cognitive Categories:
+- **decisions**: Major life choices and the reasoning behind them
+- **mistakes**: Errors and what was learned from them
+- **reasoning_patterns**: How Bill thinks through problems
+- **cognitive_biases**: Blind spots in his thinking
+- **contradictions**: Tensions between beliefs or between beliefs and actions
+
+## CONTENT REQUIREMENTS
+
+For each extraction:
+- Write in third person ("Bill believes..." not "I believe...")
+- Include ALL relevant context and specifics
+- Include direct quotes as evidence
+- Include numbers, names, places, dates
+- Estimate significance (1-10)
+- Include time_period when Bill mentions age, year, or life stage
+
+## GRANULARITY RULES
+
+Break complex stories into multiple entries:
+- One narrative might generate 5-10 separate database entries
+- **EACH PERSON mentioned gets their own relationships entry**
+- Each distinct event gets its own life_events entry
+- Each insight or realization gets its own entry
+- If Bill describes a joyful experience, create a joys entry AND a life_events entry
+- If Bill mentions a loss, create a losses entry AND potentially a sorrows entry
+
+## TEMPORAL DATA
+
+ALWAYS ask: WHEN did this happen?
+- If Bill mentions an age, include it in time_period: "age 15"
+- If Bill mentions a year, include it: "1995"
+- If Bill mentions a life period, include it: "during college", "after the divorce"
+- This data is critical for building a timeline of Bill's life
+
+## OUTPUT FORMAT
+
+```json
+{
+  "extractions": [
+    {
+      "category": "life_events",
+      "sub_category": "career",
+      "title": "Short title for the event",
+      "insight": "Full detailed description with all specifics...",
+      "evidence": "Bill said: '...'",
+      "time_period": "approximate date/age if known",
+      "location": "where it happened",
+      "people_involved": ["Name1", "Name2"],
+      "significance": 8,
+      "related_topics": ["career", "entrepreneurship"],
+      "action": "insert"
+    },
+    {
+      "category": "relationships",
+      "title": "Person's Name",
+      "sub_category": "relationship type (friend, mentor, colleague, etc.)",
+      "insight": "Full description of the person and Bill's relationship with them...",
+      "evidence": "Bill said: '...'",
+      "time_period": "when they knew each other",
+      "how_met": "how they met if mentioned",
+      "current_status": "current relationship status if mentioned",
+      "significance": 7,
+      "action": "insert"
+    }
+  ],
+  "raw_transcription": "Store the complete raw text of what Bill said for future reference",
+  "summary": "Brief summary of what was learned this session",
+  "follow_up_topics": ["Topics to explore next time"]
+}
+```
+
+## EXTRACTION TARGETS - NO UPPER LIMIT
+
+There is NO MAXIMUM number of extractions. Extract EVERYTHING. For substantial content:
+
+**EVERY person mentioned** = 1 relationships entry each
+**EVERY event described** = 1 life_events entry each
+**EVERY emotion expressed** = appropriate emotional category entry
+**EVERY preference stated** = 1 preferences entry
+**EVERY self-insight** = 1 self_knowledge entry
+**EVERY time/place mentioned** = include in relevant entries
+
+A single 5-minute response from Bill might easily generate 15-25+ extractions if he:
+- Mentions 5 people (5 relationships entries)
+- Describes 4 events (4 life_events entries)
+- Expresses joy, sadness, fear (3 emotional entries)
+- Reveals preferences or self-knowledge (3+ entries)
+- Makes observations about life (wisdom/philosophy entries)
+
+**Do NOT summarize multiple things into one entry.** If Bill mentions going to school AND meeting someone there AND having a feeling about it, that's 3 separate entries minimum.
+
+## REMEMBER - CAPTURE ALL NUANCE
+
+The goal is to build a COMPLETE cognitive substrate - not just main themes but ALL nuance:
+- **Every person is important** - even people mentioned in passing
+- **Every emotion is important** - even subtle feelings
+- **Every detail is important** - numbers, dates, places, names
+- **Every preference is important** - likes, dislikes, habits
+- **Every insight is important** - self-observations, realizations
+
+Bill is pouring his heart into this. Every word matters. Honor that by capturing EVERYTHING.
+
+**There is NO penalty for extracting too much. There IS a penalty for missing things.**
+
+EXTRACT MAXIMUM DETAIL. AIM FOR 20-50+ ENTRIES PER SUBSTANTIAL EXCHANGE.
